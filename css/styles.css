@@ -10,6 +10,8 @@
 	--color-link: rgb(248, 60, 204);
 	--color-link-selected: rgb(0, 3, 164);
 	--color-background: rgb(7, 9, 48);
+	--cursor-main: url("../assets/images/cursor_light.png"), auto;
+    --cursor-pointer: url("../assets/images/cursor_pointer_light.png"), auto;
 	--font-family: "PixelOperator", sans-serif;
 	--font-size: 24px;
 	--header-image: url("../assets/images/main-logo-x2.png");
@@ -28,9 +30,13 @@ body {
 	font-family: var(--font-family);
 	font-size: var(--font-size);
 	text-shadow: 3px 2px 5px var(--color-text-shadow);
-	cursor: url("../assets/images/cursor.png"), auto; /* Custom mouse cursor */
+	cursor: var(--cursor-main); /* Custom mouse cursor */
 	background-size: 300px;
 	background-image: var(--body-bg-image); 
+}
+
+a {
+	cursor: var(--cursor-pointer);
 }
 
 h1,
@@ -191,7 +197,6 @@ section h2 {
 a[href^="mailto:"] {
 	color: inherit; 
 	text-decoration: none; 
-	cursor: pointer;
 }
   
 a[href^="mailto:"]:hover {
