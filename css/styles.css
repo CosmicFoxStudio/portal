@@ -266,6 +266,13 @@ a[href^="mailto:"]:hover {
         padding-right: 0 !important;
     }
 
+    p{
+        padding: 0 20px;
+    }
+
+    h2{
+        padding: 0 20px;
+    }
     /* Se algum elemento tiver um padding lateral grande */
     * {
         box-sizing: border-box;
