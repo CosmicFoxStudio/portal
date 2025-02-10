@@ -162,6 +162,11 @@ header h1 {
 	animation: glow 1s ease-in-out infinite alternate;
 }
 
+/* 🔹 Esconde o menu no desktop */
+.menu-hamburguer {
+    display: none;
+}
+
 /*  ---------------- MAIN  ---------------- */
 main {
 	font-family: "PixelOperator";
