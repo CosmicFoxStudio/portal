@@ -193,8 +193,23 @@ section h2 {
   border-radius: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
   padding: 2%;
-  width: 90%;
+  width: 100%;
   margin: 0 auto;
+}
+
+.video-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%; /* Ocupa toda a largura disponível */
+    margin: 20px auto; /* Centraliza a div */
+}
+
+.video-container iframe {
+    width: 80%; /* Ajuste conforme necessário */
+    max-width: 600px; /* Define um limite máximo */
+    height: 300px; /* Ajusta a altura proporcionalmente */
+    border-radius: 10px; /* Borda arredondada opcional */
 }
 
 .box {
@@ -243,6 +258,11 @@ a[href^="mailto:"]:hover {
         margin: 0;
         padding: 0;
         position: relative;
+    }
+
+    main {
+        width: 100%;
+        margin: 0 auto;
     }
     
     .wrapper {
@@ -299,7 +319,7 @@ a[href^="mailto:"]:hover {
 /* Container do Carrossel */
 .carousel-container {
     width: 100%;
-    max-width: 600px;
+    max-width: 1100px;
     overflow: hidden;
     position: relative;
     margin: 20px auto;
@@ -310,54 +330,68 @@ a[href^="mailto:"]:hover {
     display: flex;
     gap: 20px;
     transition: transform 0.5s ease-in-out;
-    width: max-content;
-}
-
-/* Card dos Jogos */
-.game-card {
-    background: rgba(0, 3, 164, 0.8);
-    color: white;
-    padding: 20px;
-    border-radius: 10px;
-    min-width: 300px;
-    max-width: 300px;
-    text-align: center;
-    flex: 0 0 auto;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    width: 100%;
     justify-content: center;
 }
 
-/* Botões de Navegação seção games */
-.carousel-btn {
-    position: absolute;
-    top: 60%; 
-    transform: translateY(-50%);
-    background: rgba(255, 255, 255, 0.3);
-    border: none;
-    cursor: pointer;
-    font-size: 24px;
+/* 🔹 Container flexível para os jogos */
+.games-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+/* 🔹 Estilização uniforme para todos os jogos */
+.game-card {
+    width: 250px; /* Garante um tamanho padronizado */
+    height: 200px;
+    background-color: #000000;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Mantém alinhado */
+}
+
+/* 🔹 Títulos e textos centralizados */
+.game-card h3, .game-card p {
+    text-align: center;
+    margin: 0;
     padding: 10px;
-    border-radius: 50%;
-    transition: 0.3s;
-    z-index: 10; 
 }
 
-/* 🌟 Botão Esquerdo */
-.left {
-    left: -10px; /* Ajusta a posição horizontal */
+/* 🔹 Ajustando os iframes */
+.game-card iframe {
+    width: 100%;
+    height: 167px;
+    border: none;
 }
 
-/* 🌟 Botão Direito */
-.right {
-    right: -10px;
+iframe {
+    pointer-events: none; /* Impede interações dentro do iframe */
 }
 
 
-.carousel-btn:hover {
-    background: rgba(255, 255, 255, 0.6);
+/* 🔹 Botão uniforme */
+.game-card .itch-btn {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #772bbd;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 0 0 10px 10px;
+}
+
+.game-card .itch-btn:hover {
+    background-color: #3400fc;
 }
 
 /* 🌟 Posicionamento dos Botões */
