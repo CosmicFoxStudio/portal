@@ -303,58 +303,70 @@ a[href^="mailto:"]:hover {
     width: max-content;
 }
 
-/* Card dos Jogos */
+/* Container do Carrossel */
+.carousel-container {
+    position: relative;
+    width: 80%;
+    max-width: 1000px;
+    margin: 20px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Cards dos Jogos */
 .game-card {
+    width: 100%;
+    max-width: 1000px;
+    height: 200px;
     background: rgba(0, 3, 164, 0.8);
     color: white;
-    padding: 20px;
     border-radius: 10px;
-    min-width: 300px;
-    max-width: 300px;
     text-align: center;
-    flex: 0 0 auto;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    position: absolute;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
 }
 
-/* Botões de Navegação seção games */
+/* Apenas o jogo ativo fica visível */
+.game-card.active {
+    opacity: 1;
+    position: relative;
+}
+
+/* Botões de Navegação */
 .carousel-btn {
     position: absolute;
-    top: 60%; 
+    top: 50%;
     transform: translateY(-50%);
-    background: rgba(255, 255, 255, 0.3);
     border: none;
     cursor: pointer;
     font-size: 24px;
-    padding: 10px;
+    padding: 12px;
     border-radius: 50%;
     transition: 0.3s;
-    z-index: 10; 
+    z-index: 100; 
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-/* 🌟 Botão Esquerdo */
+/* Ajuste nos botões */
 .left {
-    left: -10px; /* Ajusta a posição horizontal */
+    left: -10px; /* Aproxima do card */
 }
 
-/* 🌟 Botão Direito */
 .right {
     right: -10px;
 }
 
-
+/* Efeito Hover */
 .carousel-btn:hover {
-    background: rgba(255, 255, 255, 0.6);
-}
-
-/* 🌟 Posicionamento dos Botões */
-.left {
-    left: 5px;
-}
-
-.right {
-    right: 5px;
+    background: rgba(255, 255, 255, 0.9);
 }
