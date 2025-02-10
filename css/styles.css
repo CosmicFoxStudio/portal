@@ -279,3 +279,77 @@ a[href^="mailto:"]:hover {
         max-width: 100% !important;
     }
 }
+
+/* --------------------------------- SECTION GAMES ---------------------------------*/
+/* Container do Carrossel */
+.carousel-container {
+    width: 100%;
+    max-width: 600px;
+    overflow: hidden;
+    position: relative;
+    margin: 20px auto;
+}
+
+/* Faixa Deslizante */
+.carousel-track {
+    display: flex;
+    gap: 20px;
+    transition: transform 0.5s ease-in-out;
+    width: max-content;
+}
+
+/* Card dos Jogos */
+.game-card {
+    background: rgba(0, 3, 164, 0.8);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    min-width: 300px;
+    max-width: 300px;
+    text-align: center;
+    flex: 0 0 auto;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Botões de Navegação seção games */
+.carousel-btn {
+    position: absolute;
+    top: 60%; 
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.3);
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    padding: 10px;
+    border-radius: 50%;
+    transition: 0.3s;
+    z-index: 10; 
+}
+
+/* 🌟 Botão Esquerdo */
+.left {
+    left: -10px; /* Ajusta a posição horizontal */
+}
+
+/* 🌟 Botão Direito */
+.right {
+    right: -10px;
+}
+
+
+.carousel-btn:hover {
+    background: rgba(255, 255, 255, 0.6);
+}
+
+/* 🌟 Posicionamento dos Botões */
+.left {
+    left: 5px;
+}
+
+.right {
+    right: 5px;
+}
