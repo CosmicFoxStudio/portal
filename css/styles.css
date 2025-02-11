@@ -407,4 +407,9 @@ iframe {
         box-sizing: border-box;
         max-width: 100% !important;
     }
+
+    .game-card{
+        height: 120px;
+        margin-bottom: 5px;
+    }
 }
