@@ -23,6 +23,17 @@
 	src: url(../assets/fonts/PixelOperator.ttf);
 }
 
+/* Marquee Animation */
+@keyframes marquee-desktop {
+    from { transform: translateX(100%); }
+    to { transform: translateX(-100%); }
+}
+
+@keyframes marquee-mobile {
+    from { transform: translateX(100%); }
+    to { transform: translateX(-100%); }
+}
+
 /* ---------------- BASIC STYLES ---------------- */
 body {
 	background-color: var(--color-background);
@@ -50,8 +61,8 @@ h3 {
 }
 
 p {
-    padding: 0;
-    margin: 20px;
+    padding: 5px;
+    margin: 0 10px;
 }
 
 /* Selected Text */
@@ -134,6 +145,7 @@ header h1 {
 	border-radius: 15px;
 	width: 80%;
 	margin: 0 auto;
+    margin-bottom: 5%;
 }
   
 .navbar ul {
@@ -228,6 +240,14 @@ section h2 {
 	border: 2px solid var(--color-secondary);
 	border-radius: 15px;
 	margin-bottom: 5%;
+    overflow: hidden;
+    width: 100%;
+}
+
+.marquee-text {
+    display: inline-block;
+    min-width: 100%;
+    animation: marquee-desktop 20s infinite alternate linear;
 }
 
 /* Style the email link */
@@ -352,6 +372,7 @@ iframe {
         margin: 0;
         padding: 0;
         position: relative;
+        font-size: 20px;
     }
 
     main {
@@ -373,8 +394,9 @@ iframe {
     }
     .box {
         width: 100%;
-        padding: 30px;
+        margin-bottom: 5%;
     }
+
     .marquee-container {
         width: 100%;
     }
@@ -390,9 +412,14 @@ iframe {
     .footer {
         width: 100% !important;
         max-width: 100% !important;
-        margin: 0 auto !important;
+
         padding-left: 0 !important;
         padding-right: 0 !important;
+    }
+
+    /* Mobile: Change marquee direction to left */
+    .marquee-text {
+        animation: marquee-mobile 15s infinite linear;
     }
 
     p{
