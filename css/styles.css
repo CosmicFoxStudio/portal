@@ -23,6 +23,17 @@
 	src: url(../assets/fonts/PixelOperator.ttf);
 }
 
+/* Marquee Animation */
+@keyframes marquee-desktop {
+    from { transform: translateX(100%); }
+    to { transform: translateX(-100%); }
+}
+
+@keyframes marquee-mobile {
+    from { transform: translateX(100%); }
+    to { transform: translateX(-100%); }
+}
+
 /* ---------------- BASIC STYLES ---------------- */
 body {
 	background-color: var(--color-background);
@@ -50,8 +61,8 @@ h3 {
 }
 
 p {
-    padding: 0;
-    margin: 20px;
+    padding: 5px;
+    margin: 0 10px;
 }
 
 /* Selected Text */
@@ -228,6 +239,14 @@ section h2 {
 	border: 2px solid var(--color-secondary);
 	border-radius: 15px;
 	margin-bottom: 5%;
+    overflow: hidden;
+    width: 100%;
+}
+
+.marquee-text {
+    display: inline-block;
+    min-width: 100%;
+    animation: marquee-desktop 20s infinite alternate linear;
 }
 
 /* Style the email link */
@@ -249,8 +268,7 @@ a[href^="mailto:"]:hover {
 	margin: 0 auto;
 }
 
-/* --------------------------------- SECTION GAMES ---------------------------------*/
-/* Container do Carrossel */
+/* --------------------------------- SECTION GAMES --------------------------------- */
 .carousel-container {
     width: 100%;
     max-width: 1100px;
@@ -310,10 +328,10 @@ a[href^="mailto:"]:hover {
     border: none;
 }
 
-iframe {
-    pointer-events: none; /* Impede interações dentro do iframe */
-}
-
+/* iframe {
+    /* Impede interações dentro do iframe */
+    /* pointer-events: none; */
+/* } */
 
 /* 🔹 Botão uniforme */
 .game-card .itch-btn {
@@ -342,6 +360,26 @@ iframe {
     right: 5px;
 }
 
+/* --------------------------------- SOCIAL ICONS --------------------------------- */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 15px 0;
+}
+.social-icons a {
+    display: inline-block;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+.social-icons img {
+    width: 40px;
+    height: 40px;
+    /* filter: brightness(0) invert(1); */
+}
+.social-icons a:hover {
+    transform: scale(1.2);
+    opacity: 0.8;
+}
 
 /* -------------------------------------- RESPONSIVIDADE -------------------------------------- */
 @media screen and (max-width: 768px) {
@@ -352,6 +390,7 @@ iframe {
         margin: 0;
         padding: 0;
         position: relative;
+        font-size: 20px;
     }
 
     main {
@@ -362,6 +401,12 @@ iframe {
     .wrapper {
         width: 85%;
     }
+
+    .p-first {
+        margin-top: 5%;
+        margin-bottom: 5%;
+    }
+
     .header-img {
         width: 100%;
     }
@@ -373,8 +418,9 @@ iframe {
     }
     .box {
         width: 100%;
-        padding: 30px;
+        margin-bottom: 5%;
     }
+
     .marquee-container {
         width: 100%;
     }
@@ -390,9 +436,14 @@ iframe {
     .footer {
         width: 100% !important;
         max-width: 100% !important;
-        margin: 0 auto !important;
+
         padding-left: 0 !important;
         padding-right: 0 !important;
+    }
+
+    /* Mobile: Change marquee direction to left */
+    .marquee-text {
+        animation: marquee-mobile 15s infinite linear;
     }
 
     p{

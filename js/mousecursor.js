@@ -185,6 +185,7 @@ function createDiv(height, width) {
   div.style.height=height+"px";
   div.style.width=width+"px";
   div.style.overflow="hidden";
+  div.style.pointerEvents = "none";
   return (div);
 }
 
